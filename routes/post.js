@@ -3,6 +3,6 @@ const router = express.Router();
 
 const postController = require("../controllers/post_controller");
 
-router.get("/posts", postController.posts);
+router.get("/", postController.posts);
 
 module.exports = router;
