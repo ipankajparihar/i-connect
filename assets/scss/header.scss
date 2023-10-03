@@ -1,0 +1,32 @@
+header {
+  background-color: #333; // Set your desired background color
+  color: #fff; // Set your desired text color
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  div {
+    // Additional styling for the div
+  }
+}

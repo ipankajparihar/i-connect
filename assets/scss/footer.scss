@@ -1,0 +1,27 @@
+footer {
+  background-color: #333; // Set your desired background color
+  color: #fff; // Set your desired text color
+  padding: 20px;
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
