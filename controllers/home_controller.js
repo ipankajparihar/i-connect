@@ -1,6 +1,14 @@
+const Post = require("../models/post");
 module.exports.home = function (req, res) {
-  console.log("cookies", req.cookies);
-  return res.render("home", {
-    title: "Home",
-  });
+  Post.find({})
+    .populate("user")
+    .then((posts) => {
+      return res.render("home", {
+        title: "Home",
+        posts: posts,
+      });
+    })
+    .catch((err) => {
+      console.log("error in home controller");
+    });
 };
