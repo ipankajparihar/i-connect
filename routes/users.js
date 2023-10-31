@@ -4,7 +4,18 @@ const passport = require("passport");
 
 const usersController = require("../controllers/users_controller");
 
-router.get("/profile", passport.checkAuthentication, usersController.profile);
+router.get(
+  "/profile/:id",
+  passport.checkAuthentication,
+  usersController.profile
+);
+
+router.post(
+  "/update/:id",
+  passport.checkAuthentication,
+  usersController.update
+);
+
 router.get("/signin", usersController.signIn);
 router.get("/signup", usersController.signUp);
 
@@ -18,5 +29,16 @@ router.post(
 );
 
 router.get("/signout", usersController.destroySession);
+
+router.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
+
+router.get(
+  "/auth/google/callback",
+  passport.authenticate("google", { failureRedirect: "/users/signin" }),
+  usersController.createSession
+);
 
 module.exports = router;
